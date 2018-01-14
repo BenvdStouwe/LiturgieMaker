@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  background-color: #bbbbbb;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.jumbotron {
+  border-radius: 0;
+  box-shadow: 10px 10px 5px grey;
+  margin-bottom: 15px;
+}

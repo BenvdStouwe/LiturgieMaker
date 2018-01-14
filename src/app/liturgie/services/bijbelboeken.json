@@ -1,0 +1,270 @@
+{
+  "bijbel": {
+    "bijbelboek": [
+      {
+        "id": "1",
+        "naam": "Genesis"
+      },
+      {
+        "id": "2",
+        "naam": "Exodus"
+      },
+      {
+        "id": "3",
+        "naam": "Leviticus"
+      },
+      {
+        "id": "4",
+        "naam": "Numeri"
+      },
+      {
+        "id": "5",
+        "naam": "Deuteronomium"
+      },
+      {
+        "id": "6",
+        "naam": "Jozua"
+      },
+      {
+        "id": "7",
+        "naam": "Richteren"
+      },
+      {
+        "id": "8",
+        "naam": "Ruth"
+      },
+      {
+        "id": "9",
+        "naam": "1 Samuël"
+      },
+      {
+        "id": "10",
+        "naam": "2 Samuël"
+      },
+      {
+        "id": "11",
+        "naam": "1 Koningen"
+      },
+      {
+        "id": "12",
+        "naam": "2 Koningen"
+      },
+      {
+        "id": "13",
+        "naam": "1 Kronieken"
+      },
+      {
+        "id": "14",
+        "naam": "2 Kronieken"
+      },
+      {
+        "id": "15",
+        "naam": "Ezra"
+      },
+      {
+        "id": "16",
+        "naam": "Nehemia"
+      },
+      {
+        "id": "17",
+        "naam": "Esther"
+      },
+      {
+        "id": "18",
+        "naam": "Job"
+      },
+      {
+        "id": "19",
+        "naam": "Psalmen"
+      },
+      {
+        "id": "20",
+        "naam": "Spreuken"
+      },
+      {
+        "id": "21",
+        "naam": "Prediker"
+      },
+      {
+        "id": "22",
+        "naam": "Hooglied"
+      },
+      {
+        "id": "23",
+        "naam": "Jesaja"
+      },
+      {
+        "id": "24",
+        "naam": "Jeremia"
+      },
+      {
+        "id": "25",
+        "naam": "Klaagliederen"
+      },
+      {
+        "id": "26",
+        "naam": "Ezechiël"
+      },
+      {
+        "id": "27",
+        "naam": "Daniël"
+      },
+      {
+        "id": "28",
+        "naam": "Hosea"
+      },
+      {
+        "id": "29",
+        "naam": "Joël"
+      },
+      {
+        "id": "30",
+        "naam": "Amos"
+      },
+      {
+        "id": "31",
+        "naam": "Obadja"
+      },
+      {
+        "id": "32",
+        "naam": "Jona"
+      },
+      {
+        "id": "33",
+        "naam": "Micha"
+      },
+      {
+        "id": "34",
+        "naam": "Nahum"
+      },
+      {
+        "id": "35",
+        "naam": "Habakuk"
+      },
+      {
+        "id": "36",
+        "naam": "Sefanja"
+      },
+      {
+        "id": "37",
+        "naam": "Haggai"
+      },
+      {
+        "id": "38",
+        "naam": "Zacharia"
+      },
+      {
+        "id": "39",
+        "naam": "Maleachi"
+      },
+      {
+        "id": "40",
+        "naam": "Mattheüs"
+      },
+      {
+        "id": "41",
+        "naam": "Markus"
+      },
+      {
+        "id": "42",
+        "naam": "Lukas"
+      },
+      {
+        "id": "43",
+        "naam": "Johannes"
+      },
+      {
+        "id": "44",
+        "naam": "Handelingen"
+      },
+      {
+        "id": "45",
+        "naam": "Romeinen"
+      },
+      {
+        "id": "46",
+        "naam": "1 Korintiërs"
+      },
+      {
+        "id": "47",
+        "naam": "2 Korintiërs"
+      },
+      {
+        "id": "48",
+        "naam": "Galaten"
+      },
+      {
+        "id": "49",
+        "naam": "Efeziërs"
+      },
+      {
+        "id": "50",
+        "naam": "Filippenzen"
+      },
+      {
+        "id": "51",
+        "naam": "Kolossenzen"
+      },
+      {
+        "id": "52",
+        "naam": "1 Tessalonicenzen"
+      },
+      {
+        "id": "53",
+        "naam": "2 Tessalonicenzen"
+      },
+      {
+        "id": "54",
+        "naam": "1 Timotheës"
+      },
+      {
+        "id": "55",
+        "naam": "2 Timotheës"
+      },
+      {
+        "id": "56",
+        "naam": "Titus"
+      },
+      {
+        "id": "57",
+        "naam": "Filemon"
+      },
+      {
+        "id": "58",
+        "naam": "Hebreeën"
+      },
+      {
+        "id": "59",
+        "naam": "Jakobus"
+      },
+      {
+        "id": "60",
+        "naam": "1 Petrus"
+      },
+      {
+        "id": "61",
+        "naam": "2 Petrus"
+      },
+      {
+        "id": "62",
+        "naam": "1 Johannes"
+      },
+      {
+        "id": "63",
+        "naam": "2 Johannes"
+      },
+      {
+        "id": "64",
+        "naam": "3 Johannes"
+      },
+      {
+        "id": "65",
+        "naam": "Judas"
+      },
+      {
+        "id": "66",
+        "naam": "Openbaring"
+      }
+    ]
+  }
+}
