@@ -1,6 +1,16 @@
 <footer class="footer">
-    <div class="container">
-        &copy;{{title}} {{getYears()}}
-        <a routerLink="contact">contact</a>
-    </div>
+  <div class="container">
+    &copy; {{title}} {{getYears()}} |
+    <!-- <a routerLink="contact"> -->
+    <a href="mailto:benvdstouwe@gmail.com">
+      <i class="fa fa-id-card"
+         aria-hidden="true"> Contact</i>
+    </a>
+    |
+    <a href="https://github.com/BenvdStouwe/LiturgieMaker/"
+       target="_blank">
+      <i class="fa fa-github"
+         aria-hidden="true"> Bekijk de broncode op GitHub</i>
+    </a>
+  </div>
 </footer>
