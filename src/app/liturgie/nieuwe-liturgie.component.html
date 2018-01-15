@@ -1,3 +1,30 @@
 <div class="jumbotron">
-  <h1>Nieuwe liturgie</h1>
+  <h1 class="display-4">Nieuwe liturgie</h1>
+  <p>Hier kunt u een nieuwe liturgie opstellen.
+    <a routerLink="tutorial">Klik hier voor een voorbeeld</a>.
+  </p>
+</div>
+<div class="card">
+  <div class="card-body">
+    <div ngbDropdown
+         class="input-group mb-3">
+      <div class="input-group-prepend">
+        <button class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdown1"
+                ngbDropdownToggle>Actie</button>
+        <div class="dropdown-menu"
+             aria-labelledby="dropdown1"
+             ngbDropdownMenu>
+          <button class="dropdown-item">Actie</button>
+          <button class="dropdown-item">Schriftlezing</button>
+          <button class="dropdown-item">Lied</button>
+          <button class="dropdown-item">Anders</button>
+        </div>
+      </div>
+      <input type="text"
+             class="form-control"
+             aria-label="Text input with dropdown button">
+    </div>
+  </div>
 </div>
