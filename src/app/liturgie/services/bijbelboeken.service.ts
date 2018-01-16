@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
+import { Bijbelboek } from '../model/bijbelboek';
+
 @Injectable()
 export class BijbelboekenService {
   private bijbelBoekenApiUrl = 'http://online-bijbel.nl/api.php?p=';
@@ -34,17 +36,5 @@ export class BijbelboekenService {
     for (const bijbelboekNaam of bijbelboekNamen) {
       this.bijbelboeken.push(new Bijbelboek(bijbelboekNaam));
     }
-  }
-}
-
-export class Bijbelboek {
-  private static _id = 1;
-  public id: number;
-  public naam: string;
-
-  public constructor(naam: string) {
-    Bijbelboek._id++;
-    this.id = Bijbelboek._id;
-    this.naam = naam;
   }
 }
