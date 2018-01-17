@@ -8,7 +8,7 @@ import { AppService } from '../app.service';
 })
 
 export class HomeComponent implements OnInit {
-  private title: string;
+  public title: string;
 
   constructor(private appService: AppService) { }
 

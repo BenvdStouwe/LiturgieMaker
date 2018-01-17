@@ -5,6 +5,8 @@
   },
   "apps": [
     {
+      "baseHref": "/liturgiemaker",
+      "deployUrl": "/liturgiemaker",
       "root": "src",
       "outDir": "dist",
       "assets": [

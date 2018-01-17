@@ -8,7 +8,8 @@ import { AppService } from '../app.service';
 })
 
 export class HeaderComponent implements OnInit {
-  title: string;
+  public title: string;
+  public isNavbarCollapsed = true;
 
   constructor(private appService: AppService) { }
 

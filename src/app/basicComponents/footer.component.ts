@@ -9,7 +9,7 @@ import { AppService } from '../app.service';
 })
 
 export class FooterComponent implements OnInit {
-  private title: string;
+  public title: string;
   private startingYear: number;
   private currentYear: number;
 
@@ -21,7 +21,7 @@ export class FooterComponent implements OnInit {
     this.currentYear = new Date().getFullYear();
   }
 
-  private getYears(): string {
+  public getYears(): string {
     return this.startingYear === this.currentYear
       ? this.startingYear.toString()
       : this.startingYear.toString() + ' - ' + this.currentYear.toString();

@@ -6,6 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
+import { ContactComponent } from './basicComponents/contact.component';
 import { FooterComponent } from './basicComponents/footer.component';
 import { HeaderComponent } from './basicComponents/header.component';
 import { HomeComponent } from './basicComponents/home.component';
@@ -17,6 +18,9 @@ import { BijbelboekenService } from './liturgie/services/bijbelboeken.service';
 @NgModule({
   declarations: [
     AppComponent,
+
+    // Basic
+    ContactComponent,
     HomeComponent,
     HeaderComponent,
     FooterComponent,

@@ -1,10 +1,27 @@
-<div class="jumbotron">
-  <h1 class="display-4">Nieuwe liturgie</h1>
+<div *ngIf="!isExample"
+     class="alert alert-secondary">
+  <h1 class="display-4"
+      i18n="@@newLiturgyTitle">Nieuwe liturgie</h1>
   <p>Hier kunt u een nieuwe liturgie opstellen.
-    <a routerLink="tutorial">Klik hier voor een voorbeeld</a>.
+    <a routerLink="/voorbeeld"
+       i18n="@@newLiturgyIntroduction">Klik hier voor een voorbeeld</a>.
+  </p>
+</div>
+<div *ngIf="isExample"
+     class="jumbotron">
+  <h1 class="display-4"
+      i18n="@@examplePageTitle">Voorbeeld</h1>
+  <p i18n="@@examplePageIntroduction">Een liturgie samenstellen is zo gedaan. Hieronder is een voorbeeld ingevuld. Probeer velden te wijzigen en bekijk het resultaat.
   </p>
 </div>
 <div class="card">
+  <div class="card-header">
+    <h3>
+      <span [innerText]="liturgie.naam"></span>
+      <small class="text-muted"
+             [innerText]="liturgie.aanvangsDatum | date"></small>
+    </h3>
+  </div>
   <div class="card-body">
     <div ngbDropdown
          class="input-group mb-3">

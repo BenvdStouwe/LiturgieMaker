@@ -75,6 +75,25 @@
         "panel": "shared"
       },
       "problemMatcher": []
+    },
+    {
+      "label": "ng xi18n",
+      "type": "shell",
+      "command": "ng xi18n",
+      "args": [
+        "--locale",
+        "nl",
+        "--outputPath",
+        "src/locale"
+      ],
+      "isBackground": false,
+      "presentation": {
+        "echo": true,
+        "reveal": "never",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
     }
   ]
 }
