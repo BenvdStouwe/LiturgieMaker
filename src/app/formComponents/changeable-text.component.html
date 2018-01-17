@@ -1,0 +1,13 @@
+<span *ngIf="!changeMode"
+      class="changeable-value"
+      (click)="switchChangeMode()"
+      [innerText]="value"
+      ngbTooltip="Klik om aan te passen"
+      container="body"></span>
+<input *ngIf="changeMode"
+       type="text"
+       class="form-control"
+       [placeholder]="placeholderText"
+       [appAutofocus]="changeMode"
+       (focusout)="switchChangeMode()"
+       [(ngModel)]="value" />

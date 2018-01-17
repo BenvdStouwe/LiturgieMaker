@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -10,8 +11,12 @@ import { ContactComponent } from './basicComponents/contact.component';
 import { FooterComponent } from './basicComponents/footer.component';
 import { HeaderComponent } from './basicComponents/header.component';
 import { HomeComponent } from './basicComponents/home.component';
+import { ChangeableDateComponent } from './formComponents/changeable-date.component';
+import { ChangeableTextComponent } from './formComponents/changeable-text.component';
+import { AutofocusDirective } from './formComponents/directives/autofocus.directive';
 import { NieuweLiturgieComponent } from './liturgie/nieuwe-liturgie.component';
 import { BijbelboekenService } from './liturgie/services/bijbelboeken.service';
+import { LiturgieService } from './liturgie/services/liturgie.service';
 
 
 
@@ -25,18 +30,25 @@ import { BijbelboekenService } from './liturgie/services/bijbelboeken.service';
     HeaderComponent,
     FooterComponent,
 
+    // Form
+    ChangeableDateComponent,
+    ChangeableTextComponent,
+    AutofocusDirective,
+
     // Liturgie
     NieuweLiturgieComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
+    FormsModule,
     NgbModule.forRoot(),
     HttpModule
   ],
   providers: [
     AppService,
-    BijbelboekenService
+    BijbelboekenService,
+    LiturgieService
   ],
   bootstrap: [AppComponent]
 })
