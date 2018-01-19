@@ -1,20 +1,16 @@
-import { Directive, ElementRef, Input, OnInit } from '@angular/core';
+import { Directive, ElementRef, Input, OnInit, SimpleChanges, OnChanges } from '@angular/core';
 
 @Directive({
   selector: '[appAutofocus]'
 })
-export class AutofocusDirective implements OnInit {
-  @Input() appAutofocus = false;
+export class AutofocusDirective implements OnChanges {
+  @Input() appAutofocus: boolean;
 
   constructor(private el: ElementRef) { }
 
-  ngOnInit() {
-    if (this.appAutofocus) {
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['appAutofocus'] && this.appAutofocus) {
       this.el.nativeElement.focus();
     }
-  }
-
-  @Input() set autofocus(condition: boolean) {
-    this.appAutofocus = condition !== false;
   }
 }

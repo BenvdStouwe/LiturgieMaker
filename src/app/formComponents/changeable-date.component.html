@@ -1,13 +1,14 @@
 <span *ngIf="!changeMode"
       class="changeable-value"
       (click)="switchChangeMode()"
-      [innerText]="value | date"
+      [innerText]="value | date: 'fullDate'"
       ngbTooltip="Klik om aan te passen"
       container="body"></span>
 <input *ngIf="changeMode"
-       type="text"
+       type="date"
        class="form-control"
+       [value]="value | date:'yyyy-MM-dd'"
        [placeholder]="placeholderText"
        [appAutofocus]="changeMode"
        (focusout)="switchChangeMode()"
-       [(ngModel)]="value" />
+       (input)="value = $event.target.valueAsDate" />

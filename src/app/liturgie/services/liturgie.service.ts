@@ -12,4 +12,10 @@ export class LiturgieService {
     }
     return this.liturgie;
   }
+
+  // private getLiturgieFromStorage(): Liturgie {
+  //   const liturgie: Liturgie = window.localStorage.getItem('appLocalLiturgie');
+
+  //   return liturgie;
+  // }
 }

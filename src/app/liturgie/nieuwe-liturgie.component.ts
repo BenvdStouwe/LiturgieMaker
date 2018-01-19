@@ -31,8 +31,12 @@ export class NieuweLiturgieComponent implements OnInit {
     });
   }
 
-  public updateTitle(title: string): void {
+  public updateLiturgieNaam(title: string): void {
     this.liturgie.naam = title;
+  }
+
+  public updateLiturgieDatum(datum: Date): void {
+    this.liturgie.aanvangsDatum = datum;
   }
 
   private getLiturgie(): Liturgie {

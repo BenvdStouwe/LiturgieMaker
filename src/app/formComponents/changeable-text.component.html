@@ -6,7 +6,7 @@
       container="body"></span>
 <input *ngIf="changeMode"
        type="text"
-       class="form-control"
+       class="form-control placeholder-shown"
        [placeholder]="placeholderText"
        [appAutofocus]="changeMode"
        (focusout)="switchChangeMode()"
