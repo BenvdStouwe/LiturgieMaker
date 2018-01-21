@@ -2,7 +2,7 @@
       class="changeable-value"
       (click)="switchChangeMode()"
       [innerText]="value"
-      ngbTooltip="Klik om aan te passen"
+      [ngbTooltip]="tooltipText"
       container="body"></span>
 <input *ngIf="changeMode"
        type="text"

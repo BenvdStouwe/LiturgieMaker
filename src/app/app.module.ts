@@ -1,4 +1,6 @@
-import { NgModule, LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeNl from '@angular/common/locales/nl';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,12 +16,11 @@ import { HomeComponent } from './common/home.component';
 import { LocalStorageService } from './common/services/localstorage.service';
 import { ChangeableDateComponent } from './formComponents/changeable-date.component';
 import { ChangeableTextComponent } from './formComponents/changeable-text.component';
+import { ChangeableTimeComponent } from './formComponents/changeable-time.component';
 import { AutofocusDirective } from './formComponents/directives/autofocus.directive';
 import { NieuweLiturgieComponent } from './liturgie/nieuwe-liturgie.component';
 import { BijbelboekenService } from './liturgie/services/bijbelboeken.service';
 import { LiturgieService } from './liturgie/services/liturgie.service';
-import localeNl from '@angular/common/locales/nl';
-import { registerLocaleData } from '@angular/common';
 
 registerLocaleData(localeNl);
 
@@ -36,6 +37,7 @@ registerLocaleData(localeNl);
     // Form
     ChangeableDateComponent,
     ChangeableTextComponent,
+    ChangeableTimeComponent,
     AutofocusDirective,
 
     // Liturgie

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AppService } from '../app.service';
+import { RoutingNames } from './model/routingnames';
+
 
 @Component({
   selector: 'app-footer',
@@ -10,6 +12,7 @@ import { AppService } from '../app.service';
 
 export class FooterComponent implements OnInit {
   public title: string;
+  public routingNames = RoutingNames;
   private startingYear: number;
   private currentYear: number;
 

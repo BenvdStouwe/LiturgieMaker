@@ -4,7 +4,7 @@
   <h1 class="display-4"
       i18n="@@newLiturgyTitle">Nieuwe liturgie</h1>
   <p class="lead">Hier kunt u een nieuwe liturgie opstellen. Klik
-    <a routerLink="/voorbeeld"
+    <a [routerLink]="['/',routingNames.VOORBEELD]"
        i18n="@@newLiturgyIntroduction">hier</a> voor een voorbeeld.
   </p>
 </ngb-alert>
@@ -25,11 +25,17 @@
                                placeholderText="Naam van liturgie"
                                (changedValue)="updateLiturgieNaam($event)"></app-changeable-text>
         </div>
-        <div class="col">
+        <div class="col-md-auto">
           <small class="text-muted">
             <app-changeable-date [value]="liturgie.aanvangsDatum"
-                                 placeholderText="Datum van liturgie"
+                                 placeholderText="Aanvangsdatum"
                                  (changedValue)="updateLiturgieDatum($event)"></app-changeable-date>
+          </small>
+        </div>
+        <div class="col">
+          <small class="text-muted">
+            <app-changeable-time [value]="liturgie.aanvangsTijd"
+                                 placeholderText="Aanvangstijd"></app-changeable-time>
           </small>
         </div>
       </div>

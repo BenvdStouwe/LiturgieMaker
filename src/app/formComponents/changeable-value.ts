@@ -5,6 +5,7 @@ export abstract class ChangeableValue {
   @Input() placeholderText: string;
   @Output() changedValue: EventEmitter<any>;
   public changeMode = false;
+  public tooltipText = 'Klik om aan te passen';
 
   public switchChangeMode(): void {
     this.changeMode = !this.changeMode;

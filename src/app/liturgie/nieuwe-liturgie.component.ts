@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { RoutingNames } from '../common/model/routingnames';
 import { Liturgie } from './model/liturgie';
 import { BijbelboekenService } from './services/bijbelboeken.service';
 import { LiturgieService } from './services/liturgie.service';
+
 
 @Component({
   selector: 'app-nieuwe-liturgie',
@@ -13,6 +15,7 @@ import { LiturgieService } from './services/liturgie.service';
 export class NieuweLiturgieComponent implements OnInit {
   public isExample: boolean;
   public liturgie: Liturgie;
+  public routingNames = RoutingNames;
 
   constructor(
     private bijbelboekService: BijbelboekenService,
@@ -37,6 +40,10 @@ export class NieuweLiturgieComponent implements OnInit {
 
   public updateLiturgieDatum(datum: Date): void {
     this.liturgie.aanvangsDatum = datum;
+  }
+
+  public updateLiturgieTijd(tijd: number): void {
+    this.liturgie.aanvangsDatum.setTime(tijd);
   }
 
   private getLiturgie(): Liturgie {

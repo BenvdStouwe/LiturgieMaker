@@ -11,4 +11,12 @@ import { ChangeableValue } from './changeable-value';
 export class ChangeableDateComponent extends ChangeableValue {
   @Input() value: Date;
   @Output() changedValue = new EventEmitter<Date>();
+
+  public switchChangeMode(): void {
+    // The datepicker in (at least) Chrome sets the value to undefined when the input is cancelled
+    if (!this.value) {
+      this.value = new Date();
+    }
+    super.switchChangeMode();
+  }
 }

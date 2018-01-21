@@ -16,16 +16,16 @@
        id="navbarSupportedContent">
     <div class="navbar-nav mr-auto">
       <a class="nav-item nav-link"
-         routerLink="/home"
+         [routerLink]="[routingNames.HOME]"
          [routerLinkActive]="['active']">Home</a>
       <a class="nav-item nav-link pull-right"
-         routerLink="/voorbeeld"
+         [routerLink]="[routingNames.VOORBEELD]"
          [routerLinkActive]="['active']">Voorbeeld</a>
       <a class="nav-item nav-link pull-right"
-         routerLink="/contact"
+         [routerLink]="[routingNames.CONTACT]"
          [routerLinkActive]="['active']">Contact</a>
       <a class="nav-item btn btn-secondary"
-         routerLink="/nieuweLiturgie"
+         [routerLink]="[routingNames.NIEUWELITURGIE]"
          [routerLinkActive]="['active']">Nieuwe liturgie</a>
     </div>
   </div>
