@@ -16,4 +16,20 @@ export class ChangeableTimeComponent extends ChangeableValue {
   public setTime(time: any): void {
     console.log(time);
   }
+
+  public getTime(): string {
+    return `${this.value.hours}:${this.value.minutes}`;
+  }
+
+  public activateChangeMode(): void {
+    console.log('ChangeMode gaan AAN!');
+    this.changeMode = true;
+  }
+
+  public switchChangeMode(): void {
+    if (!this.value) {
+      this.value = <Time>{ hours: 9, minutes: 30 };
+    }
+    super.switchChangeMode();
+  }
 }

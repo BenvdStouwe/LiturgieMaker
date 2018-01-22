@@ -1,13 +1,13 @@
 <span *ngIf="!changeMode"
       class="changeable-value"
       (click)="switchChangeMode()"
-      [innerText]="value"
+      [innerText]="getTime()"
       [ngbTooltip]="tooltipText"
       container="body"></span>
 <ngb-timepicker *ngIf="changeMode"
                 [(ngModel)]="value"
                 [spinners]="false"
-                (focusout)="switchChangeMode()"></ngb-timepicker>
+                (focus)="activateChangeMode()"></ngb-timepicker>
 <!-- <input *ngIf="changeMode"
        type="time"
        class="form-control"
