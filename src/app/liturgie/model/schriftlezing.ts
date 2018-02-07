@@ -5,5 +5,4 @@ export class Schriftlezing implements ILiturgieItem {
   public boek: string;
   public hoofdstuk: number;
   public verzen: number[];
-
 }
