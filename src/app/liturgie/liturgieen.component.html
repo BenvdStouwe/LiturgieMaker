@@ -1,11 +1,9 @@
-<div class="card">
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item"
-        *ngFor="let liturgie of liturgieen">
-      {{liturgie.titel}}
-      <span class="badge badge-primary">{{liturgie.aanvangsdatum | date}}</span>
-      <span *ngIf="liturgie.publicatiedatum"
-            class="badge badge-secondary pull-right">{{liturgie.publicatiedatum | date}}</span>
-    </li>
-  </ul>
+<div class="list-group">
+  <a class="list-group-item list-group-item-action"
+     *ngFor="let liturgie of liturgieen">
+    <span class="badge badge-primary">{{liturgie.aanvangsdatum | date:'medium'}}</span>
+    {{liturgie.titel}}
+    <span *ngIf="liturgie.publicatiedatum"
+          class="badge badge-secondary pull-right">{{liturgie.publicatiedatum | date:'medium'}}</span>
+  </a>
 </div>

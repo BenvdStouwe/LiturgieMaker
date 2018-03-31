@@ -6,12 +6,10 @@ import { Liturgie } from './model/liturgie';
 import { BijbelboekenService } from './services/bijbelboeken.service';
 import { LiturgieService } from './services/liturgie.service';
 
-
 @Component({
   selector: 'app-nieuwe-liturgie',
   templateUrl: 'nieuwe-liturgie.component.html'
 })
-
 export class NieuweLiturgieComponent implements OnInit {
   isExample: boolean;
   liturgie: Liturgie;
@@ -21,7 +19,7 @@ export class NieuweLiturgieComponent implements OnInit {
     private bijbelboekService: BijbelboekenService,
     private liturgieService: LiturgieService,
     private route: ActivatedRoute
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.route.url.subscribe(result => {
@@ -47,7 +45,7 @@ export class NieuweLiturgieComponent implements OnInit {
   }
 
   private getLiturgie(): Liturgie {
-    return this.liturgieService.getLiturgie();
+    return this.liturgieService.getNietVerstuurdeLiturgie();
   }
 
   private resetLirgie(): void {

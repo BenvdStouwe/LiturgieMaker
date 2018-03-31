@@ -5,11 +5,11 @@ export class AppService {
   private title = 'LiturgieMaker';
   private startingYear = 2018;
 
-  public getTitle(): string {
+  getTitle(): string {
     return this.title;
   }
 
-  public getStartingYear(): number {
+  getStartingYear(): number {
     return this.startingYear;
   }
 }

@@ -18,11 +18,11 @@ export class Liturgie {
     this.items = new Array<ILiturgieItem>();
   }
 
-  public getItems() {
+  getItems() {
     return this.items;
   }
 
-  public addItem(item: ILiturgieItem, index?: number) {
+  addItem(item: ILiturgieItem, index?: number) {
     this.items.push(item);
   }
 }

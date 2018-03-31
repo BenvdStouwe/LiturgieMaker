@@ -1,7 +1,7 @@
 export class Bijbelboek {
-  public naam: string;
+  naam: string;
 
-  public constructor(naam: string) {
+  constructor(naam: string) {
     this.naam = naam;
   }
 }
