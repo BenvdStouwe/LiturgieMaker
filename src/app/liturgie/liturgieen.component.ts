@@ -8,6 +8,7 @@ import { LiturgieService } from './services/liturgie.service';
   templateUrl: 'liturgieen.component.html'
 })
 export class LiturgieenComponent implements OnInit {
+  laadtLiturgieen = false;
   liturgieen: Liturgie[];
 
   constructor(private liturgieService: LiturgieService) {}
@@ -17,8 +18,10 @@ export class LiturgieenComponent implements OnInit {
   }
 
   getLiturgieen() {
+    this.laadtLiturgieen = true;
     this.liturgieService.getLiturgieen().subscribe(
       (liturgieen: Liturgie[]) => {
+        this.laadtLiturgieen = false;
         this.liturgieen = liturgieen;
       },
       e =>

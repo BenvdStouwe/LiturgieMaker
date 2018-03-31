@@ -13,6 +13,7 @@ import { ContactComponent } from './common/contact.component';
 import { FooterComponent } from './common/footer.component';
 import { HeaderComponent } from './common/header.component';
 import { HomeComponent } from './common/home.component';
+import { LoaderComponent } from './common/loader.component';
 import { LocalStorageService } from './common/services/localstorage.service';
 import { ChangeableDateComponent } from './formComponents/changeable-date.component';
 import { ChangeableTextComponent } from './formComponents/changeable-text.component';
@@ -34,6 +35,7 @@ registerLocaleData(localeNl);
     HomeComponent,
     HeaderComponent,
     FooterComponent,
+    LoaderComponent,
 
     // Form
     ChangeableDateComponent,
@@ -63,4 +65,4 @@ registerLocaleData(localeNl);
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
