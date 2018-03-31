@@ -1,5 +1,5 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
 
 import { Bijbelboek } from '../model/bijbelboek';
 
@@ -8,7 +8,7 @@ export class BijbelboekenService {
   private bijbelBoekenApiUrl = 'http://online-bijbel.nl/api.php?p=';
   private bijbelboeken: Bijbelboek[] = new Array<Bijbelboek>();
 
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
     this.setBijbelboeken();
   }
 

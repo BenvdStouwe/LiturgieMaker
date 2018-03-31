@@ -13,9 +13,9 @@ import { LiturgieService } from './services/liturgie.service';
 })
 
 export class NieuweLiturgieComponent implements OnInit {
-  public isExample: boolean;
-  public liturgie: Liturgie;
-  public routingNames = RoutingNames;
+  isExample: boolean;
+  liturgie: Liturgie;
+  routingNames = RoutingNames;
 
   constructor(
     private bijbelboekService: BijbelboekenService,
@@ -34,15 +34,15 @@ export class NieuweLiturgieComponent implements OnInit {
     });
   }
 
-  public updateLiturgieNaam(title: string): void {
-    this.liturgie.naam = title;
+  updateLiturgieNaam(title: string): void {
+    this.liturgie.titel = title;
   }
 
-  public updateLiturgieDatum(datum: Date): void {
+  updateLiturgieDatum(datum: Date): void {
     this.liturgie.aanvangsDatum = datum;
   }
 
-  public updateLiturgieTijd(tijd: number): void {
+  updateLiturgieTijd(tijd: number): void {
     this.liturgie.aanvangsDatum.setTime(tijd);
   }
 
