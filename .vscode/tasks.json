@@ -44,7 +44,7 @@
     },
     {
       "label": "npm build prod",
-      "type": "shell",
+      "type": "process",
       "command": "ng",
       "args": [
         "build",
@@ -65,8 +65,11 @@
     },
     {
       "label": "npm: install",
-      "type": "shell",
-      "command": "npm install",
+      "type": "process",
+      "command": "npm",
+      "args": [
+        "install"
+      ],
       "isBackground": false,
       "presentation": {
         "echo": true,
@@ -78,9 +81,10 @@
     },
     {
       "label": "ng xi18n",
-      "type": "shell",
-      "command": "ng xi18n",
+      "type": "process",
+      "command": "ng",
       "args": [
+        "xi18n",
         "--locale",
         "nl",
         "--outputPath",
