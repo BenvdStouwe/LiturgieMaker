@@ -1,11 +1,30 @@
 <app-loader *ngIf="laadtLiturgieen"
             tekst="Bezig met het ophalen van je liturgieen"></app-loader>
-<div class="list-group">
+<app-error *ngIf="foutmelding"
+           [tekst]="foutmelding"
+           (close)="verwijderFoutmelding()"></app-error>
+<div *ngIf="liturgieen"
+     class="list-group">
   <a class="list-group-item list-group-item-action"
      *ngFor="let liturgie of liturgieen">
-    <span class="badge badge-primary">{{liturgie.aanvangsdatum | date:'medium'}}</span>
+    <span class="badge badge-secondary"
+          [ngbTooltip]="'Publicatie: ' + (liturgie.publicatiedatum | date:'medium')"
+          placement="top">
+      <i *ngIf="!gepubliceerd(liturgie.publicatiedatum)"
+         class="fa fa-clock-o"
+         aria-hidden="true"></i>
+      <i *ngIf="gepubliceerd(liturgie.publicatiedatum)"
+         class="fa fa-check"
+         aria-hidden="true"></i>
+      {{liturgie.aanvangsdatum | date:'medium'}}</span>
     {{liturgie.titel}}
-    <span *ngIf="liturgie.publicatiedatum"
-          class="badge badge-secondary pull-right">{{liturgie.publicatiedatum | date:'medium'}}</span>
+  </a>
+  <a class="list-group-item list-group-item-info">
+    <i class="fa fa-check"
+       aria-hidden="true"></i> Gepubliceerd
+    <i class="fa fa-clock-o"
+       aria-hidden="true"></i> Nog niet gepubliceerd
+    <i class="fa fa-times"
+       aria-hidden="true"></i> Verborgen
   </a>
 </div>

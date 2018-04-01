@@ -8,11 +8,11 @@ import { LiturgieenComponent } from './liturgie/liturgieen.component';
 import { NieuweLiturgieComponent } from './liturgie/nieuwe-liturgie.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: RoutingNames.HOME, pathMatch: 'full' },
   { path: RoutingNames.HOME, component: HomeComponent },
   { path: RoutingNames.NIEUWELITURGIE, component: NieuweLiturgieComponent },
   { path: RoutingNames.VOORBEELD, component: NieuweLiturgieComponent },
   { path: RoutingNames.CONTACT, component: ContactComponent },
+  { path: `${RoutingNames.LITURGIE}/:id`, component: NieuweLiturgieComponent },
   { path: RoutingNames.LITURGIEEN, component: LiturgieenComponent }
 ];
 

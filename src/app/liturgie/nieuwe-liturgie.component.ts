@@ -15,6 +15,9 @@ export class NieuweLiturgieComponent implements OnInit {
   liturgie: Liturgie;
   routingNames = RoutingNames;
 
+  loading = false;
+  foutmelding: string;
+
   constructor(
     private bijbelboekService: BijbelboekenService,
     private liturgieService: LiturgieService,
@@ -23,11 +26,14 @@ export class NieuweLiturgieComponent implements OnInit {
 
   ngOnInit() {
     this.route.url.subscribe(result => {
-      if (result.some(u => u.path === 'voorbeeld')) {
+      if (result.some(u => u.path === RoutingNames.VOORBEELD)) {
         this.isExample = true;
         this.setVoorbeeldLiturgie();
+      } else if (result.some(u => u.path === RoutingNames.LITURGIE)) {
+        const id = +result['id'];
+        this.getLiturige(id);
       } else {
-        this.liturgie = this.getLiturgie();
+        this.liturgie = this.getLocalLiturgie();
       }
     });
   }
@@ -44,15 +50,28 @@ export class NieuweLiturgieComponent implements OnInit {
     this.liturgie.aanvangsDatum.setTime(tijd);
   }
 
-  private getLiturgie(): Liturgie {
-    return this.liturgieService.getNietVerstuurdeLiturgie();
+  private getLiturige(id: number): void {
+    this.loading = true;
+    this.liturgieService.getLiturgie(id).subscribe(
+      (liturgie: Liturgie) => {
+        this.loading = false;
+        this.liturgie = liturgie;
+      },
+      e => {
+        this.foutmelding = 'Fout bij ophalen van liturgie';
+      }
+    );
   }
 
-  private resetLirgie(): void {
-    this.liturgie = new Liturgie('Nieuwe liturgie', new Date());
+  private getLocalLiturgie(): Liturgie {
+    return this.liturgieService.getNietVerstuurdeLiturgie();
   }
 
   private setVoorbeeldLiturgie(): void {
     this.liturgie = new Liturgie('Jouw liturgie', new Date());
+  }
+
+  verwijderFoutmelding() {
+    this.foutmelding = null;
   }
 }

@@ -17,6 +17,10 @@ export class LiturgieService {
     return this.nietVerstuurdeLiturgie;
   }
 
+  getLiturgie(id: number) {
+    return this.http.get(`${this.url}/${id}`);
+  }
+
   getLiturgieen() {
     return this.http.get(this.url);
   }

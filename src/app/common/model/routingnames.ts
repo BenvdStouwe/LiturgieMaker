@@ -1,7 +1,8 @@
 export enum RoutingNames {
-  HOME = 'home',
+  HOME = '',
   CONTACT = 'contact',
   VOORBEELD = 'voorbeeld',
   NIEUWELITURGIE = 'nieuweLiturgie',
+  LITURGIE = 'liturgie',
   LITURGIEEN = 'liturgieen'
 }

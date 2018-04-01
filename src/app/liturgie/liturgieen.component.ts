@@ -11,6 +11,8 @@ export class LiturgieenComponent implements OnInit {
   laadtLiturgieen = false;
   liturgieen: Liturgie[];
 
+  foutmelding: string;
+
   constructor(private liturgieService: LiturgieService) {}
 
   ngOnInit() {
@@ -24,10 +26,19 @@ export class LiturgieenComponent implements OnInit {
         this.laadtLiturgieen = false;
         this.liturgieen = liturgieen;
       },
-      e =>
-        alert(
-          'Er is iets fout gegaan bij het ophalen van je liturgieen, probeer het later opnieuw.'
-        )
+      e => {
+        this.foutmelding =
+          'Er is iets fout gegaan bij het ophalen van je liturgieen, probeer het later opnieuw.';
+        this.laadtLiturgieen = false;
+      }
     );
+  }
+
+  gepubliceerd(publicatiedatum: string): boolean {
+    return new Date(publicatiedatum) <= new Date();
+  }
+
+  verwijderFoutmelding() {
+    this.foutmelding = null;
   }
 }
