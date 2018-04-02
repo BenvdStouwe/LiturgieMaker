@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { RoutingNames } from '../common/model/routingnames';
 import { Liturgie } from './model/liturgie';
 import { LiturgieService } from './services/liturgie.service';
 
@@ -10,6 +11,7 @@ import { LiturgieService } from './services/liturgie.service';
 export class LiturgieenComponent implements OnInit {
   laadtLiturgieen = false;
   liturgieen: Liturgie[];
+  routingNames = RoutingNames;
 
   foutmelding: string;
 
@@ -27,9 +29,9 @@ export class LiturgieenComponent implements OnInit {
         this.liturgieen = liturgieen;
       },
       e => {
-        this.foutmelding =
-          'Er is iets fout gegaan bij het ophalen van je liturgieen, probeer het later opnieuw.';
         this.laadtLiturgieen = false;
+        this.foutmelding =
+          'Er is iets fout gegaan bij het ophalen van je liturgieen.';
       }
     );
   }
@@ -38,7 +40,10 @@ export class LiturgieenComponent implements OnInit {
     return new Date(publicatiedatum) <= new Date();
   }
 
-  verwijderFoutmelding() {
+  verwijderFoutmelding(retry: boolean) {
     this.foutmelding = null;
+    if (retry) {
+      this.getLiturgieen();
+    }
   }
 }

@@ -1,66 +1,14 @@
-<ngb-alert *ngIf="!isExample"
-           type="secondary"
-           [dismissible]="false">
+<app-loader *ngIf="loading"
+            tekst="Bezig met het ophalen van de liturgie"></app-loader>
+<app-error *ngIf="foutmelding"
+           [tekst]="foutmelding"
+           (close)="verwijderFoutmelding()"></app-error>
+<div class="jumbotron">
   <h1 class="display-4"
       i18n="@@newLiturgyTitle">Nieuwe liturgie</h1>
   <p class="lead">Hier kunt u een nieuwe liturgie opstellen. Klik
     <a [routerLink]="['/',routingNames.VOORBEELD]"
        i18n="@@newLiturgyIntroduction">hier</a> voor een voorbeeld.
   </p>
-</ngb-alert>
-<div *ngIf="isExample"
-     class="jumbotron">
-  <h1 class="display-4"
-      i18n="@@examplePageTitle">Voorbeeld</h1>
-  <p class="lead"
-     i18n="@@examplePageIntroduction">Een liturgie samenstellen is zo gedaan. Hieronder is een voorbeeld ingevuld. Probeer velden te wijzigen en bekijk het resultaat.
-  </p>
 </div>
-<div class="card">
-  <div class="card-header">
-    <h3>
-      <div class="row justify-content-md-center">
-        <div class="col-md-auto">
-          <app-changeable-text [value]="liturgie.titel"
-                               placeholderText="Titel van liturgie"
-                               (changedValue)="updateLiturgieNaam($event)"></app-changeable-text>
-        </div>
-        <div class="col-md-auto">
-          <small class="text-muted">
-            <app-changeable-date [value]="liturgie.aanvangsDatum"
-                                 placeholderText="Aanvangsdatum"
-                                 (changedValue)="updateLiturgieDatum($event)"></app-changeable-date>
-          </small>
-        </div>
-        <div class="col">
-          <small class="text-muted">
-            <app-changeable-time [value]="liturgie.aanvangsTijd"
-                                 placeholderText="Aanvangstijd"></app-changeable-time>
-          </small>
-        </div>
-      </div>
-    </h3>
-  </div>
-  <div class="card-body">
-    <div ngbDropdown
-         class="input-group mb-3">
-      <div class="input-group-prepend">
-        <button class="btn btn-secondary dropdown-toggle"
-                type="button"
-                id="dropdown1"
-                ngbDropdownToggle>Actie</button>
-        <div class="dropdown-menu"
-             aria-labelledby="dropdown1"
-             ngbDropdownMenu>
-          <button class="dropdown-item">Actie</button>
-          <button class="dropdown-item">Schriftlezing</button>
-          <button class="dropdown-item">Lied</button>
-          <button class="dropdown-item">Anders</button>
-        </div>
-      </div>
-      <input type="text"
-             class="form-control"
-             aria-label="Text input with dropdown button">
-    </div>
-  </div>
-</div>
+<app-liturgie-bewerken [liturgie]="liturgie"></app-liturgie-bewerken>

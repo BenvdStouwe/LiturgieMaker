@@ -2,10 +2,17 @@
             tekst="Bezig met het ophalen van je liturgieen"></app-loader>
 <app-error *ngIf="foutmelding"
            [tekst]="foutmelding"
-           (close)="verwijderFoutmelding()"></app-error>
+           [retry]="true"
+           (close)="verwijderFoutmelding($event)"></app-error>
 <div *ngIf="liturgieen"
      class="list-group">
+  <a class="btn btn-xs btn-secondary"
+     [routerLink]="['/', routingNames.NIEUWELITURGIE]">
+    <i class="fa fa-plus"
+       aria-hidden="true"></i> Nieuwe liturgie
+  </a>
   <a class="list-group-item list-group-item-action"
+     [routerLink]="['/',routingNames.LITURGIE, liturgie.id]"
      *ngFor="let liturgie of liturgieen">
     <span class="badge badge-secondary"
           [ngbTooltip]="'Publicatie: ' + (liturgie.publicatiedatum | date:'medium')"

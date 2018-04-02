@@ -20,10 +20,13 @@ import { ChangeableDateComponent } from './formComponents/changeable-date.compon
 import { ChangeableTextComponent } from './formComponents/changeable-text.component';
 import { ChangeableTimeComponent } from './formComponents/changeable-time.component';
 import { AutofocusDirective } from './formComponents/directives/autofocus.directive';
+import { LiturgieBewekrenComponent } from './liturgie/components/liturgie-bewerken.component';
+import { LiturgieComponent } from './liturgie/liturgie.component';
 import { LiturgieenComponent } from './liturgie/liturgieen.component';
 import { NieuweLiturgieComponent } from './liturgie/nieuwe-liturgie.component';
 import { BijbelboekenService } from './liturgie/services/bijbelboeken.service';
 import { LiturgieService } from './liturgie/services/liturgie.service';
+import { VoorbeeldLiturgieComponent } from './liturgie/voorbeeld-liturgie.component';
 
 registerLocaleData(localeNl);
 
@@ -46,8 +49,11 @@ registerLocaleData(localeNl);
     AutofocusDirective,
 
     // Liturgie
+    LiturgieBewekrenComponent,
+    LiturgieComponent,
     LiturgieenComponent,
-    NieuweLiturgieComponent
+    NieuweLiturgieComponent,
+    VoorbeeldLiturgieComponent
   ],
   imports: [
     AppRoutingModule,
