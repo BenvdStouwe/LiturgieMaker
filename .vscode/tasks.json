@@ -4,8 +4,10 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "type": "npm",
-      "script": "test",
+      "label": "npm test",
+      "type": "process",
+      "command": "npm",
+      "args": ["test"],
       "isBackground": true,
       "group": {
         "kind": "test",
@@ -17,14 +19,13 @@
         "focus": false,
         "panel": "dedicated"
       },
-      "problemMatcher": [
-        "$jasmine"
-      ]
+      "problemMatcher": ["$jasmine"]
     },
     {
       "label": "npm start",
-      "type": "npm",
-      "script": "start",
+      "type": "process",
+      "command": "npm",
+      "args": ["start"],
       "isBackground": true,
       "group": {
         "kind": "build",
@@ -36,21 +37,13 @@
         "focus": false,
         "panel": "dedicated"
       },
-      "problemMatcher": [
-        "$tsc",
-        "$tslint5",
-        "$tsc-watch"
-      ]
+      "problemMatcher": ["$tsc", "$tslint5", "$tsc-watch"]
     },
     {
       "label": "npm build prod",
       "type": "process",
       "command": "ng",
-      "args": [
-        "build",
-        "-aot",
-        "-prod"
-      ],
+      "args": ["build", "-aot", "-prod"],
       "isBackground": false,
       "presentation": {
         "echo": true,
@@ -58,18 +51,13 @@
         "focus": false,
         "panel": "dedicated"
       },
-      "problemMatcher": [
-        "$tsc",
-        "$tslint5"
-      ]
+      "problemMatcher": ["$tsc", "$tslint5"]
     },
     {
       "label": "npm: install",
       "type": "process",
       "command": "npm",
-      "args": [
-        "install"
-      ],
+      "args": ["install"],
       "isBackground": false,
       "presentation": {
         "echo": true,
@@ -83,13 +71,7 @@
       "label": "ng xi18n",
       "type": "process",
       "command": "ng",
-      "args": [
-        "xi18n",
-        "--locale",
-        "nl",
-        "--outputPath",
-        "src/locale"
-      ],
+      "args": ["xi18n", "--locale", "nl", "--outputPath", "src/locale"],
       "isBackground": false,
       "presentation": {
         "echo": true,
