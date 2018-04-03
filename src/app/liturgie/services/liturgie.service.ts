@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+import { environment } from '../../../environments/environment.prod';
 import { Liturgie } from '../model/liturgie';
 
 @Injectable()
 export class LiturgieService {
-  private url = 'http://localhost:5000/api/liturgie';
+  private url = `${environment.apiUrl}/liturgie`;
   private nietVerstuurdeLiturgie: Liturgie;
 
   constructor(private http: HttpClient) {}
