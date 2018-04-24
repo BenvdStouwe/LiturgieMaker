@@ -1,21 +1,28 @@
-import { Time } from '@angular/common';
-
 import { ILiturgieItem } from './liturgie-item';
 
-export class Liturgie {
+export interface ILiturgie {
   titel: string;
   aanvangsDatum: Date;
-  aanvangsTijd: Time;
+  publicatieDatum: Date;
+
+  id: number;
+  items: ILiturgieItem[];
+}
+
+export class Liturgie implements ILiturgie {
+  titel: string;
+  aanvangsDatum: Date;
   publicatieDatum: Date;
 
   id: number;
   items: ILiturgieItem[];
 
-  constructor(titel: string, aanvangsDatum: Date) {
-    this.titel = titel;
-    this.aanvangsDatum = aanvangsDatum;
-    this.aanvangsTijd = <Time>{ hours: 9, minutes: 30 };
-    this.items = new Array<ILiturgieItem>();
+  constructor(liturgie: ILiturgie) {
+    this.id = liturgie.id;
+    this.titel = liturgie.titel;
+    this.aanvangsDatum = new Date(liturgie.aanvangsDatum);
+    this.publicatieDatum = new Date(liturgie.publicatieDatum);
+    this.items = liturgie.items;
   }
 
   getItems() {

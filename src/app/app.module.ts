@@ -4,6 +4,7 @@ import localeNl from '@angular/common/locales/nl';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,7 +21,7 @@ import { ChangeableDateComponent } from './formComponents/changeable-date.compon
 import { ChangeableTextComponent } from './formComponents/changeable-text.component';
 import { ChangeableTimeComponent } from './formComponents/changeable-time.component';
 import { AutofocusDirective } from './formComponents/directives/autofocus.directive';
-import { LiturgieBewekrenComponent } from './liturgie/components/liturgie-bewerken.component';
+import { LiturgieBewerkenComponent } from './liturgie/components/liturgie-bewerken.component';
 import { LiturgieComponent } from './liturgie/liturgie.component';
 import { LiturgieenComponent } from './liturgie/liturgieen.component';
 import { NieuweLiturgieComponent } from './liturgie/nieuwe-liturgie.component';
@@ -49,7 +50,7 @@ registerLocaleData(localeNl);
     AutofocusDirective,
 
     // Liturgie
-    LiturgieBewekrenComponent,
+    LiturgieBewerkenComponent,
     LiturgieComponent,
     LiturgieenComponent,
     NieuweLiturgieComponent,
@@ -58,6 +59,7 @@ registerLocaleData(localeNl);
   imports: [
     AppRoutingModule,
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
     NgbModule.forRoot()

@@ -6,7 +6,7 @@ import { Liturgie } from '../model/liturgie';
   selector: 'app-liturgie-bewerken',
   templateUrl: 'liturgie-bewerken.component.html'
 })
-export class LiturgieBewekrenComponent {
+export class LiturgieBewerkenComponent {
   @Input() liturgie: Liturgie;
 
   updateLiturgieNaam(title: string): void {

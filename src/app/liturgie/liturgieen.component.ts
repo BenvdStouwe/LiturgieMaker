@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { RoutingNames } from '../common/model/routingnames';
-import { Liturgie } from './model/liturgie';
+import { ILiturgie, Liturgie } from './model/liturgie';
 import { LiturgieService } from './services/liturgie.service';
 
 @Component({
@@ -24,20 +24,20 @@ export class LiturgieenComponent implements OnInit {
   getLiturgieen() {
     this.laadtLiturgieen = true;
     this.liturgieService.getLiturgieen().subscribe(
-      (liturgieen: Liturgie[]) => {
+      (liturgieDtos: ILiturgie[]) => {
         this.laadtLiturgieen = false;
-        this.liturgieen = liturgieen;
+        this.liturgieen = liturgieDtos.map(l => new Liturgie(l));
       },
       e => {
         this.laadtLiturgieen = false;
         this.foutmelding =
-          'Er is iets fout gegaan bij het ophalen van je liturgieen.';
+          'Er is iets fout gegaan bij het ophalen van de liturgieen.';
       }
     );
   }
 
-  gepubliceerd(publicatiedatum: string): boolean {
-    return new Date(publicatiedatum) <= new Date();
+  gepubliceerd(publicatiedatum: Date): boolean {
+    return publicatiedatum <= new Date();
   }
 
   verwijderFoutmelding(retry: boolean) {

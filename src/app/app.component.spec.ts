@@ -2,20 +2,14 @@ import { async, TestBed } from '@angular/core/testing';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './basicComponents/header.component';
-import { HomeComponent } from './basicComponents/home.component';
+import { HeaderComponent } from './common/header.component';
+import { HomeComponent } from './common/home.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent,
-        HomeComponent,
-        HeaderComponent
-      ],
-      imports: [
-        AppRoutingModule
-      ],
+      declarations: [AppComponent, HomeComponent, HeaderComponent],
+      imports: [AppRoutingModule]
     }).compileComponents();
   }));
 

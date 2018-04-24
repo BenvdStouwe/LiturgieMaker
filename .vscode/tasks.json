@@ -5,7 +5,7 @@
   "tasks": [
     {
       "label": "npm test",
-      "type": "process",
+      "type": "shell",
       "command": "npm",
       "args": ["test"],
       "isBackground": true,
@@ -23,25 +23,21 @@
     },
     {
       "label": "npm start",
-      "type": "process",
+      "type": "shell",
       "command": "npm",
       "args": ["start"],
       "isBackground": true,
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
       "presentation": {
         "echo": true,
-        "reveal": "silent",
-        "focus": false,
+        "reveal": "always",
+        "focus": true,
         "panel": "dedicated"
       },
       "problemMatcher": ["$tsc", "$tslint5", "$tsc-watch"]
     },
     {
       "label": "npm build prod",
-      "type": "process",
+      "type": "shell",
       "command": "ng",
       "args": ["build", "-aot", "-prod"],
       "isBackground": false,
@@ -55,7 +51,7 @@
     },
     {
       "label": "npm: install",
-      "type": "process",
+      "type": "shell",
       "command": "npm",
       "args": ["install"],
       "isBackground": false,
@@ -69,7 +65,7 @@
     },
     {
       "label": "ng xi18n",
-      "type": "process",
+      "type": "shell",
       "command": "ng",
       "args": ["xi18n", "--locale", "nl", "--outputPath", "src/locale"],
       "isBackground": false,

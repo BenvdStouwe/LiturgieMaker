@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { environment } from '../../../environments/environment';
-import { Liturgie } from '../model/liturgie';
+import { ILiturgie, Liturgie } from '../model/liturgie';
+import { ILiturgieItem } from '../model/liturgie-item';
 
 @Injectable()
 export class LiturgieService {
@@ -13,9 +14,23 @@ export class LiturgieService {
 
   getNietVerstuurdeLiturgie(): Liturgie {
     if (!this.nietVerstuurdeLiturgie) {
-      this.nietVerstuurdeLiturgie = new Liturgie('Nieuwe liturgie', new Date());
+      this.nietVerstuurdeLiturgie = new Liturgie(<ILiturgie>{
+        titel: 'Nieuwe liturgie',
+        aanvangsDatum: new Date(),
+        publicatieDatum: new Date(),
+        items: new Array<ILiturgieItem>()
+      });
     }
     return this.nietVerstuurdeLiturgie;
+  }
+
+  getVoorbeeldLiturgie(): Liturgie {
+    return new Liturgie(<ILiturgie>{
+      titel: 'Jouw liturgie',
+      aanvangsDatum: new Date(),
+      publicatieDatum: new Date(),
+      items: new Array<ILiturgieItem>()
+    });
   }
 
   getLiturgie(id: number) {
