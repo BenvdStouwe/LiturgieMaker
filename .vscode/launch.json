@@ -19,5 +19,13 @@
       "url": "http://localhost:4200",
       "webRoot": "${workspaceFolder}"
     },
+    {
+      "name": "Debug in Safari",
+      "type": "safari",
+      "request": "launch",
+      "reAttach": true,
+      "url": "http://localhost:4200",
+      "webRoot": "${workspaceFolder}"
+    }
   ]
 }
