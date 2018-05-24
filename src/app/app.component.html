@@ -1,8 +1,6 @@
 <app-header></app-header>
 <div class="container">
-  <div [@routerTransition]="getState(o)">
-    <!-- Hier messages -->
-    <router-outlet #o="outlet"></router-outlet>
-  </div>
+  <!-- Hier messages -->
+  <router-outlet #o="outlet"></router-outlet>
 </div>
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->
