@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
 
-import { routerTransition } from './routerTransition.animation';
-
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  animations: [routerTransition]
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
   getState(outlet) {
