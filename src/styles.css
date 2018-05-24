@@ -4,11 +4,18 @@ body {
   background-color: lightgrey;
 }
 
+.container {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
 .btn {
   border-radius: 0;
 }
 
-.jumbotron, .alert, .card {
+.jumbotron,
+.alert,
+.card {
   border-radius: 0;
   box-shadow: 5px 8px 5px grey;
 }
