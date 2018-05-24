@@ -7,8 +7,16 @@ import { ChangeableValue } from './changeable-value';
   templateUrl: 'changeable-text.component.html',
   styleUrls: ['changeable-value.css']
 })
-
 export class ChangeableTextComponent extends ChangeableValue {
   @Input() value: string;
+  @Input() defaultValue = 'Lorem ipsum';
   @Output() changedValue = new EventEmitter<string>();
+
+  switchChangeMode(): void {
+    // Text value should not be empty.
+    if (!this.value) {
+      this.value = this.defaultValue;
+    }
+    super.switchChangeMode();
+  }
 }

@@ -1,9 +1,10 @@
 import { ILiturgieItem } from './liturgie-item';
+import * as moment from 'moment';
 
 export interface ILiturgie {
   titel: string;
-  aanvangsDatum: Date;
-  publicatieDatum: Date;
+  aanvangsDatum: moment.Moment;
+  publicatieDatum: moment.Moment;
 
   id: number;
   items: ILiturgieItem[];
@@ -11,8 +12,8 @@ export interface ILiturgie {
 
 export class Liturgie implements ILiturgie {
   titel: string;
-  aanvangsDatum: Date;
-  publicatieDatum: Date;
+  aanvangsDatum: moment.Moment;
+  publicatieDatum: moment.Moment;
 
   id: number;
   items: ILiturgieItem[];
@@ -20,16 +21,21 @@ export class Liturgie implements ILiturgie {
   constructor(liturgie: ILiturgie) {
     this.id = liturgie.id;
     this.titel = liturgie.titel;
-    this.aanvangsDatum = new Date(liturgie.aanvangsDatum);
-    this.publicatieDatum = new Date(liturgie.publicatieDatum);
+    this.aanvangsDatum = moment(liturgie.aanvangsDatum);
+    this.publicatieDatum = moment(liturgie.publicatieDatum);
     this.items = liturgie.items;
-  }
-
-  getItems() {
-    return this.items;
   }
 
   addItem(item: ILiturgieItem, index?: number) {
     this.items.push(item);
+  }
+
+  removeItem(itemToDelete: ILiturgieItem) {
+    this.items.forEach((item, index) => {
+      if (item === itemToDelete) {
+        this.items.splice(index, 1);
+        return;
+      }
+    });
   }
 }

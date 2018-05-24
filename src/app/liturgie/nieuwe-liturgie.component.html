@@ -1,8 +1,9 @@
 <app-loader *ngIf="loading"
-            tekst="Bezig met het ophalen van de liturgie"></app-loader>
+            tekst="Bezig met het versturen van de liturgie."></app-loader>
 <app-error *ngIf="foutmelding"
            [tekst]="foutmelding"
-           (close)="verwijderFoutmelding()"></app-error>
+           [retry]="retry"
+           (close)="verwijderFoutmelding($event)"></app-error>
 <div class="jumbotron">
   <h1 class="display-4"
       i18n="@@newLiturgyTitle">Nieuwe liturgie</h1>
@@ -10,5 +11,9 @@
     <a [routerLink]="['/',routingNames.VOORBEELD]"
        i18n="@@newLiturgyIntroduction">hier</a> voor een voorbeeld.
   </p>
+  <button class="btn btn-primary btn-lg"
+          [disabled]="loading"
+          (click)="verstuurLiturgie()"
+          role="button">Liturgie opslaan</button>
 </div>
 <app-liturgie-bewerken [liturgie]="liturgie"></app-liturgie-bewerken>

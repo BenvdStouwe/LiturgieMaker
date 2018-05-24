@@ -1,5 +1,5 @@
 <app-loader *ngIf="laadtLiturgieen"
-            tekst="Bezig met het ophalen van je liturgieen"></app-loader>
+            tekst="Bezig met het ophalen van je liturgieen."></app-loader>
 <app-error *ngIf="foutmelding"
            [tekst]="foutmelding"
            [retry]="true"
@@ -15,15 +15,15 @@
      [routerLink]="['/',routingNames.LITURGIE, liturgie.id]"
      *ngFor="let liturgie of liturgieen">
     <span class="badge badge-secondary"
-          [ngbTooltip]="'Publicatie: ' + (liturgie.publicatiedatum | date:'medium')"
+          [ngbTooltip]="'Publicatie: ' + (liturgie.publicatieDatum | date:'medium')"
           placement="top">
-      <i *ngIf="!gepubliceerd(liturgie.publicatiedatum)"
+      <i *ngIf="!gepubliceerd(liturgie.publicatieDatum)"
          class="fa fa-clock-o"
          aria-hidden="true"></i>
-      <i *ngIf="gepubliceerd(liturgie.publicatiedatum)"
+      <i *ngIf="gepubliceerd(liturgie.publicatieDatum)"
          class="fa fa-check"
          aria-hidden="true"></i>
-      {{liturgie.aanvangsdatum | date:'medium'}}</span>
+      {{liturgie.aanvangsDatum | date:'medium'}}</span>
     {{liturgie.titel}}
   </a>
   <a class="list-group-item list-group-item-info">

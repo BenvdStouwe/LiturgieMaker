@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import * as moment from 'moment';
 
 import { ChangeableValue } from './changeable-value';
 
@@ -8,13 +9,13 @@ import { ChangeableValue } from './changeable-value';
   styleUrls: ['changeable-value.css']
 })
 export class ChangeableDateComponent extends ChangeableValue {
-  @Input() value: Date;
+  @Input() value: moment.Moment;
   @Output() changedValue = new EventEmitter<Date>();
 
   switchChangeMode(): void {
     // The datepicker in (at least) Chrome sets the value to undefined when the input is cancelled
     if (!this.value) {
-      this.value = new Date();
+      this.value = moment();
     }
     super.switchChangeMode();
   }

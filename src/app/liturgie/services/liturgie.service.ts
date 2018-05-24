@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { ILiturgie, Liturgie } from '../model/liturgie';
 import { ILiturgieItem } from '../model/liturgie-item';
+import * as moment from 'moment';
 
 @Injectable()
 export class LiturgieService {
@@ -16,8 +17,8 @@ export class LiturgieService {
     if (!this.nietVerstuurdeLiturgie) {
       this.nietVerstuurdeLiturgie = new Liturgie(<ILiturgie>{
         titel: 'Nieuwe liturgie',
-        aanvangsDatum: new Date(),
-        publicatieDatum: new Date(),
+        aanvangsDatum: moment(),
+        publicatieDatum: moment(),
         items: new Array<ILiturgieItem>()
       });
     }
@@ -27,8 +28,8 @@ export class LiturgieService {
   getVoorbeeldLiturgie(): Liturgie {
     return new Liturgie(<ILiturgie>{
       titel: 'Jouw liturgie',
-      aanvangsDatum: new Date(),
-      publicatieDatum: new Date(),
+      aanvangsDatum: moment(),
+      publicatieDatum: moment(),
       items: new Array<ILiturgieItem>()
     });
   }
@@ -39,5 +40,13 @@ export class LiturgieService {
 
   getLiturgieen() {
     return this.http.get(this.url);
+  }
+
+  postLiturgie(liturgie: Liturgie) {
+    return this.http.post(this.url, liturgie);
+  }
+
+  verwijderNietVerstuurdeLiturgie() {
+    this.nietVerstuurdeLiturgie = null;
   }
 }

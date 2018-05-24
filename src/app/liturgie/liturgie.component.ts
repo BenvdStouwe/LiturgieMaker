@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Liturgie } from './model/liturgie';
+import { Liturgie, ILiturgie } from './model/liturgie';
 import { LiturgieService } from './services/liturgie.service';
 
 @Component({
@@ -37,9 +37,9 @@ export class LiturgieComponent implements OnInit {
   private getLiturgie(id: number): void {
     this.loading = true;
     this.liturgieService.getLiturgie(id).subscribe(
-      (liturgie: Liturgie) => {
+      (liturgie: ILiturgie) => {
         this.loading = false;
-        this.liturgie = liturgie;
+        this.liturgie = new Liturgie(liturgie);
       },
       e => {
         this.loading = false;

@@ -4,8 +4,7 @@ import localeNl from '@angular/common/locales/nl';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +27,7 @@ import { NieuweLiturgieComponent } from './liturgie/nieuwe-liturgie.component';
 import { BijbelboekenService } from './liturgie/services/bijbelboeken.service';
 import { LiturgieService } from './liturgie/services/liturgie.service';
 import { VoorbeeldLiturgieComponent } from './liturgie/voorbeeld-liturgie.component';
+import { NgbDateMomentAdapter } from './common/injectables/ngbmomentadapter';
 
 registerLocaleData(localeNl);
 
@@ -59,7 +59,6 @@ registerLocaleData(localeNl);
   imports: [
     AppRoutingModule,
     BrowserModule,
-    BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
     NgbModule.forRoot()
@@ -71,7 +70,8 @@ registerLocaleData(localeNl);
 
     // Liturgie
     BijbelboekenService,
-    LiturgieService
+    LiturgieService,
+    [{ provide: NgbDateAdapter, useClass: NgbDateMomentAdapter }]
   ],
   bootstrap: [AppComponent]
 })

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import * as moment from 'moment';
 
 import { Liturgie } from '../model/liturgie';
 
@@ -8,16 +9,17 @@ import { Liturgie } from '../model/liturgie';
 })
 export class LiturgieBewerkenComponent {
   @Input() liturgie: Liturgie;
+  @Input() enabled: boolean;
 
   updateLiturgieNaam(title: string): void {
     this.liturgie.titel = title;
   }
 
-  updateLiturgieDatum(datum: Date): void {
+  updateLiturgieDatum(datum: moment.Moment): void {
     this.liturgie.aanvangsDatum = datum;
   }
 
-  updateLiturgieTijd(tijd: number): void {
-    this.liturgie.aanvangsDatum.setTime(tijd);
-  }
+  // updateLiturgieTijd(tijd: number): void {
+  //   this.liturgie.aanvangsDatum.setTime(tijd);
+  // }
 }
