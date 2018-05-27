@@ -1,8 +1,7 @@
 <span *ngIf="!changeMode"
-      class="changeable-value"
+      [ngClass]="{'changeable-value': enabled}"
       (click)="switchChangeMode()"
       [innerText]="getTime()"
-      [ngbTooltip]="tooltipText"
       container="body"></span>
 <ngb-timepicker *ngIf="changeMode"
                 [(ngModel)]="value"

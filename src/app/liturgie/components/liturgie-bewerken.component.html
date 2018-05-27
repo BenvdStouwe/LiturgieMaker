@@ -8,19 +8,33 @@
                                placeholderText="Titel van liturgie"
                                (changedValue)="updateLiturgieNaam($event)"></app-changeable-text>
         </div>
-        <!-- <div class="col-md-auto">
+        <div class="col-md-auto">
           <small class="text-muted">
             <app-changeable-date [value]="liturgie.aanvangsDatum"
                                  placeholderText="Aanvangsdatum"
                                  (changedValue)="updateLiturgieDatum($event)"></app-changeable-date>
           </small>
         </div>
-        <div class="col">
-          <small class="text-muted">
-            <app-changeable-time [value]="liturgie.aanvangsTijd"
-                                 placeholderText="Aanvangstijd"></app-changeable-time>
-          </small>
-        </div> -->
+        <div *ngIf="showSettings"
+             class="btn-group float-right">
+          <button class="btn btn-link"
+                  [disabled]="!enabled"
+                  (click)="save()">
+            <i class="fa fa-floppy-o"></i>
+          </button>
+          <button *ngIf="liturgie.id"
+                  class="btn btn-link"
+                  [disabled]="!enabled"
+                  (click)="dupliceer()">
+            <i class="fa fa-files-o"></i>
+          </button>
+          <button *ngIf="liturgie.id"
+                  class="btn btn-outline-danger"
+                  [disabled]="!enabled"
+                  (click)="confirmDeletion()">
+            <i class="fa fa-trash"></i>
+          </button>
+        </div>
       </div>
     </h3>
   </div>
@@ -31,19 +45,25 @@
         <button class="btn btn-secondary dropdown-toggle"
                 type="button"
                 id="dropdown1"
-                ngbDropdownToggle>Actie</button>
+                ngbDropdownToggle
+                [disabled]="!enabled">Actie</button>
         <div class="dropdown-menu"
              aria-labelledby="dropdown1"
              ngbDropdownMenu>
-          <button class="dropdown-item">Actie</button>
-          <button class="dropdown-item">Schriftlezing</button>
-          <button class="dropdown-item">Lied</button>
-          <button class="dropdown-item">Anders</button>
+          <button class="dropdown-item"
+                  [disabled]="!enabled">Actie</button>
+          <button class="dropdown-item"
+                  [disabled]="!enabled">Schriftlezing</button>
+          <button class="dropdown-item"
+                  [disabled]="!enabled">Lied</button>
+          <button class="dropdown-item"
+                  [disabled]="!enabled">Anders</button>
         </div>
       </div>
       <input type="text"
              class="form-control"
-             aria-label="Text input with dropdown button">
+             aria-label="Text input with dropdown button"
+             [disabled]="!enabled">
     </div>
   </div>
 </div>

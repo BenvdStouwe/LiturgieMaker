@@ -6,26 +6,21 @@
            (close)="verwijderFoutmelding($event)"></app-error>
 <div *ngIf="liturgieen"
      class="list-group">
+  <ngb-pagination *ngIf="aantalLiturgieen > liturgieenPerPagina"
+                  class="d-flex justify-content-center"
+                  [collectionSize]="aantalLiturgieen"
+                  [pageSize]="liturgieenPerPagina"
+                  [page]="page"
+                  (pageChange)="switchPage($event)"
+                  aria-label="Pagination"></ngb-pagination>
   <a class="btn btn-xs btn-secondary"
      [routerLink]="['/', routingNames.NIEUWELITURGIE]">
     <i class="fa fa-plus"
        aria-hidden="true"></i> Nieuwe liturgie
   </a>
-  <a class="list-group-item list-group-item-action"
-     [routerLink]="['/',routingNames.LITURGIE, liturgie.id]"
-     *ngFor="let liturgie of liturgieen">
-    <span class="badge badge-secondary"
-          [ngbTooltip]="'Publicatie: ' + (liturgie.publicatieDatum | date:'medium')"
-          placement="top">
-      <i *ngIf="!gepubliceerd(liturgie.publicatieDatum)"
-         class="fa fa-clock-o"
-         aria-hidden="true"></i>
-      <i *ngIf="gepubliceerd(liturgie.publicatieDatum)"
-         class="fa fa-check"
-         aria-hidden="true"></i>
-      {{liturgie.aanvangsDatum | date:'medium'}}</span>
-    {{liturgie.titel}}
-  </a>
+  <app-liturgie-item *ngFor="let liturgie of liturgieen"
+                     [liturgie]="liturgie">
+  </app-liturgie-item>
   <a class="list-group-item list-group-item-info">
     <i class="fa fa-check"
        aria-hidden="true"></i> Gepubliceerd
@@ -34,4 +29,11 @@
     <i class="fa fa-times"
        aria-hidden="true"></i> Verborgen
   </a>
+  <ngb-pagination *ngIf="aantalLiturgieen > liturgieenPerPagina"
+                  class="d-flex justify-content-center"
+                  [collectionSize]="aantalLiturgieen"
+                  [pageSize]="liturgieenPerPagina"
+                  [page]="page"
+                  (pageChange)="switchPage($event)"
+                  aria-label="Pagination"></ngb-pagination>
 </div>

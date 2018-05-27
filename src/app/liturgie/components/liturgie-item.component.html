@@ -1,0 +1,14 @@
+<a class="list-group-item list-group-item-action"
+   [routerLink]="['/',routingNames.LITURGIE, liturgie.id]">
+    <span class="badge badge-secondary"
+          [ngbTooltip]="'Publicatie: ' + (liturgie.publicatieDatum | date:'medium')"
+          placement="top">
+        <i *ngIf="!gepubliceerd(liturgie.publicatieDatum)"
+           class="fa fa-clock-o"
+           aria-hidden="true"></i>
+        <i *ngIf="gepubliceerd(liturgie.publicatieDatum)"
+           class="fa fa-check"
+           aria-hidden="true"></i>
+        {{liturgie.aanvangsDatum | date:'medium'}}</span>
+    {{liturgie.titel}}
+</a>

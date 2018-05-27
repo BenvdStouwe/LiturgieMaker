@@ -3,11 +3,19 @@ import { EventEmitter, Input, Output } from '@angular/core';
 export abstract class ChangeableValue {
   @Input() value: any;
   @Input() placeholderText: string;
+  @Input() enabled = true;
   @Output() changedValue: EventEmitter<any>;
   changeMode = false;
-  tooltipText = 'Klik om aan te passen';
+
+  canChangeMode(): boolean {
+    return this.enabled;
+  }
 
   switchChangeMode(): void {
+    if (!this.canChangeMode()) {
+      return;
+    }
+
     this.changeMode = !this.changeMode;
 
     if (!this.changeMode) {

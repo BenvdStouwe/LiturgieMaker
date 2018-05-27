@@ -4,5 +4,9 @@
            [tekst]="foutmelding"
            [retry]="true"
            (close)="verwijderFoutmelding($event)"></app-error>
-<app-liturgie-bewerken [liturgie]="liturgie">
+<app-liturgie-bewerken [liturgie]="liturgie"
+                       [enabled]="!loading"
+                       (saveLiturgie)="updateLiturgie()"
+                       (copyLiturgie)="dupliceerLiturgie()"
+                       (deleteLiturgie)="verwijderLiturgie()">
 </app-liturgie-bewerken>

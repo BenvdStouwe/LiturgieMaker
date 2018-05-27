@@ -28,6 +28,9 @@ import { BijbelboekenService } from './liturgie/services/bijbelboeken.service';
 import { LiturgieService } from './liturgie/services/liturgie.service';
 import { VoorbeeldLiturgieComponent } from './liturgie/voorbeeld-liturgie.component';
 import { NgbDateMomentAdapter } from './common/injectables/ngbmomentadapter';
+import { ConfirmationModalComponent } from './common/infoComponents/confirmation-modal.component';
+import { LiturgieItemComponent } from './liturgie/components/liturgie-item.component';
+import { WarningComponent } from './common/infoComponents/warning.component';
 
 registerLocaleData(localeNl);
 
@@ -42,6 +45,8 @@ registerLocaleData(localeNl);
     FooterComponent,
     ErrorComponent,
     LoaderComponent,
+    WarningComponent,
+    ConfirmationModalComponent,
 
     // Form
     ChangeableDateComponent,
@@ -51,6 +56,7 @@ registerLocaleData(localeNl);
 
     // Liturgie
     LiturgieBewerkenComponent,
+    LiturgieItemComponent,
     LiturgieComponent,
     LiturgieenComponent,
     NieuweLiturgieComponent,
@@ -73,6 +79,7 @@ registerLocaleData(localeNl);
     LiturgieService,
     [{ provide: NgbDateAdapter, useClass: NgbDateMomentAdapter }]
   ],
+  entryComponents: [ConfirmationModalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

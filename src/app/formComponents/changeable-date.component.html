@@ -1,14 +1,30 @@
-<span *ngIf="!changeMode"
-      class="changeable-value"
-      (click)="switchChangeMode()"
+<span [ngClass]="{'changeable-value': enabled}"
+      (click)="d.toggle()"
       [innerText]="value | date: 'fullDate'"
-      [ngbTooltip]="tooltipText"
-      container="body"></span>
-<input *ngIf="changeMode"
-       type="date"
+      container="body">
+</span>
+<input type="date"
+       hidden="hidden"
        class="form-control"
        [value]="value | date:'yyyy-MM-dd'"
        [placeholder]="placeholderText"
        [appAutofocus]="changeMode"
-       (focusout)="switchChangeMode()"
-       (input)="value = $event.target.valueAsDate" />
+       [(ngModel)]="value"
+       ngbDatepicker
+       #d="ngbDatepicker" />
+
+<!-- <div class="input-group">
+      <input class="form-control"
+             placeholder="yyyy-mm-dd"
+             name="dp"
+             [(ngModel)]="value"
+             ngbDatepicker
+             #d="ngbDatepicker">
+      <div class="input-group-append">
+            <button class="btn btn-secondary"
+                    (click)="d.toggle()"
+                    type="button">
+                  <i class="fa fa-calendar"></i>
+            </button>
+      </div>
+</div> -->

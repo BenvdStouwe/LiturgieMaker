@@ -38,12 +38,24 @@ export class LiturgieService {
     return this.http.get(`${this.url}/${id}`);
   }
 
-  getLiturgieen() {
-    return this.http.get(this.url);
+  getLiturgieen(page: number, results: number) {
+    return this.http.get(`${this.url}/${page}/${results}`);
   }
 
-  postLiturgie(liturgie: Liturgie) {
+  getAantalLiturgieen() {
+    return this.http.get(`${this.url}/aantal`);
+  }
+
+  verstuurNieuweLiturgie(liturgie: Liturgie) {
     return this.http.post(this.url, liturgie);
+  }
+
+  updateBestaandeLiturgie(liturgie: Liturgie) {
+    return this.http.put(`${this.url}/${liturgie.id}`, liturgie);
+  }
+
+  verwijderBestaandeLiturgie(liturgie: Liturgie) {
+    return this.http.delete(`${this.url}/${liturgie.id}`);
   }
 
   verwijderNietVerstuurdeLiturgie() {

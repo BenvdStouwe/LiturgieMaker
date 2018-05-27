@@ -15,13 +15,12 @@ const routes: Routes = [
   { path: RoutingNames.VOORBEELD, component: VoorbeeldLiturgieComponent },
   { path: RoutingNames.CONTACT, component: ContactComponent },
   { path: `${RoutingNames.LITURGIE}/:id`, component: LiturgieComponent },
-  { path: RoutingNames.LITURGIEEN, component: LiturgieenComponent }
+  { path: RoutingNames.LITURGIEEN, component: LiturgieenComponent },
+  { path: `${RoutingNames.LITURGIEEN}/:page`, component: LiturgieenComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-  @Input() title: string;
-}
+export class AppRoutingModule {}

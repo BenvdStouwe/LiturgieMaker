@@ -37,7 +37,7 @@ export class NieuweLiturgieComponent implements OnInit {
 
   verstuurLiturgie() {
     this.loading = true;
-    this.liturgieService.postLiturgie(this.liturgie).subscribe(
+    this.liturgieService.verstuurNieuweLiturgie(this.liturgie).subscribe(
       (liturgie: ILiturgie) => {
         this.loading = false;
         this.liturgieService.verwijderNietVerstuurdeLiturgie();

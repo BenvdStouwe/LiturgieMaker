@@ -13,6 +13,10 @@ export class ChangeableTextComponent extends ChangeableValue {
   @Output() changedValue = new EventEmitter<string>();
 
   switchChangeMode(): void {
+    if (!this.canChangeMode()) {
+      return;
+    }
+
     // Text value should not be empty.
     if (!this.value) {
       this.value = this.defaultValue;

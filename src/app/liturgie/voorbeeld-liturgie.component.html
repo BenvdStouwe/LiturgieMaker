@@ -3,6 +3,9 @@
       i18n="@@examplePageTitle">Voorbeeld</h1>
   <p class="lead"
      i18n="@@examplePageIntroduction">Een liturgie samenstellen is zo gedaan. Hieronder is een voorbeeld ingevuld. Probeer velden te wijzigen en bekijk het resultaat.
+    <a [routerLink]="['/',routingNames.NIEUWELITURGIE]">Klik hier</a> om een nieuwe liturgie aan te maken.
   </p>
 </div>
-<app-liturgie-bewerken [liturgie]="liturgie"></app-liturgie-bewerken>
+<app-liturgie-bewerken [liturgie]="liturgie"
+                       [showSettings]="false">
+</app-liturgie-bewerken>
